@@ -33,3 +33,13 @@ document.body.onclick = function (e) {
     hamburgerMenu.classList.remove("show-menu");
   }
 };
+document.onkeyup = function (e) {
+  console.log(e.code);
+  if (e.code === "Escape") {
+    if (btn.getAttribute("aria-expanded") === "true") {
+      btn.setAttribute("aria-expanded", false);
+      hamburgerMenu.classList.remove("show-menu");
+      btn.focus();
+    }
+  }
+};
